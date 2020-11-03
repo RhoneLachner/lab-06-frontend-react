@@ -1,25 +1,49 @@
-import logo from './logo.svg';
+
+import React from 'react';
+import Fetch from 'superagent';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+export default class App extends React.Component {
 
-export default App;
+  state = {
+      astrologyData: [],
+      loading: true
+  }
+
+
+  componentDidMount = async () => {
+      this.fetchAstrology()
+  }
+
+  fetchAstrology = async () => {
+    this.setState({
+      loading: true
+    });
+    const response = await Fetch.get(`https://sheltered-reaches-14727.herokuapp.com/astrology`);
+    this.setState({ astrologyData: response.body, loading: false });
+  }
+
+  render() {
+    console.log(this.state.astrologyData)
+    return (
+  
+      <div className='astrologyData'>
+            {
+              this.state.loading
+              ? <div>Loading</div>
+              : this.state.astrologyData.map((astrology) => 
+
+              <div className='astrologyItem' key={astrology.id}>
+                    <h2>{astrology.sign}</h2>
+                    <p>Ruling Planet: {astrology.ruling_planet}</p>
+                    <p>Fixed Mode? {astrology.mode_fixed}</p>
+                    <p>Chill Level: {astrology.chill_level}</p>
+              </div>
+              
+                )}
+                
+     </div>
+
+    )}
+    }
+          

@@ -5,9 +5,31 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  align-items: center;
+  background-image: src="../public/space.jpg";
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h2 {
+  font-size: 15px;
+}
+
+h2{
+  text-align: center;
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+p {
+  text-align: center;
+  font-size: 12px;
+}
+
+.astrologyItem {
+  margin: 30px;
+  background-color: rgba(255, 255, 255, 0.468);
 }
