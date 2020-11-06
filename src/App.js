@@ -1,34 +1,38 @@
-
-import React from 'react';
-import Fetch from 'superagent';
+import React, { Component } from 'react'
 import './App.css';
+import {
+    BrowserRouter as Router, 
+    Route, 
+    Switch,
+} from 'react-router-dom';
+import ListPage from './ListPage.js';
+import CreatePage from './CreatePage.js';
+import DetailPage from './DetailPage.js';
 
-export default class App extends React.Component {
-
-  state = {
-      astrologyData: [],
-      loading: true
-  }
-
-
-  componentDidMount = async () => {
-      this.fetchAstrology()
-  }
-
-  fetchAstrology = async () => {
-    this.setState({
-      loading: true
-    });
-    const response = await Fetch.get(`https://sheltered-reaches-14727.herokuapp.com/astrology`);
-    
-  }
-
-  render() {
-    console.log(this.state.astrologyData)
-    return (
-  
-      
-
-    )}
+export default class App extends Component {
+    render() {
+        return (
+            <div>
+                <Router>
+                    <Switch>
+                        <Route 
+                            path="/" 
+                            exact
+                            render={(routerProps) => <ListPage {...routerProps} />} 
+                        />
+                        <Route 
+                            path="/create" 
+                            exact
+                            render={(routerProps) => <CreatePage {...routerProps} />} 
+                        />
+                        <Route 
+                            path="/detail/:id" 
+                            exact
+                            render={(routerProps) => <DetailPage {...routerProps} />} 
+                        />
+                    </Switch>
+                </Router>
+            </div>
+        )
     }
-          
+}
