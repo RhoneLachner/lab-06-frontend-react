@@ -1,49 +1,51 @@
 
-import React from 'react';
-import Fetch from 'superagent';
+import React, { Component } from 'react'
+
+import ListPage from './ListPage.js';
+import CreatePage from './CreatePage.js';
+import DetailPage from './DetailPage.js';
 import './App.css';
+import {
+    BrowserRouter as Router, 
+    Route, 
+    Switch,
+} from 'react-router-dom';
+import HomePage from './HomePage.js';
+import Header from './Header.js';
+
 
 export default class App extends React.Component {
+    render() {
+        return (
 
-  state = {
-      astrologyData: [],
-      loading: true
-  }
+            <div>
+                <Router>
+                  <Header />
+                    <Switch>
+                        <Route 
+                            path="/" 
+                            exact
+                            render={(routerProps) => <HomePage {...routerProps} />} 
+                        />
+                        <Route 
+                            path="/list" 
+                            exact
+                            render={(routerProps) => <ListPage {...routerProps} />} 
+                        />
+                        <Route 
+                            path="/create" 
+                            exact
+                            render={(routerProps) => <CreatePage {...routerProps} />} 
+                        />
+                        <Route 
+                            path="/detail/:id" 
+                            exact
+                            render={(routerProps) => <DetailPage {...routerProps} />} 
+                        />
+                    </Switch>
+                </Router>
+            </div>
 
-
-  componentDidMount = async () => {
-      this.fetchAstrology()
-  }
-
-  fetchAstrology = async () => {
-    this.setState({
-      loading: true
-    });
-    const response = await Fetch.get(`https://sheltered-reaches-14727.herokuapp.com/astrology`);
-    this.setState({ astrologyData: response.body, loading: false });
-  }
-
-  render() {
-    console.log(this.state.astrologyData)
-    return (
-  
-      <div className='astrologyData'>
-            {
-              this.state.loading
-              ? <div>Loading</div>
-              : this.state.astrologyData.map((astrology) => 
-
-              <div className='astrologyItem' key={astrology.id}>
-                    <h2>{astrology.sign}</h2>
-                    <p>Ruling Planet: {astrology.ruling_planet}</p>
-                    <p>Fixed Mode? {astrology.mode_fixed}</p>
-                    <p>Chill Level: {astrology.chill_level}</p>
-              </div>
-              
-                )}
-                
-     </div>
-
-    )}
+        )
     }
-          
+}

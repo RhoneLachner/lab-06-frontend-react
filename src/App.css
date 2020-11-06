@@ -1,18 +1,90 @@
 .App {
   text-align: center;
-  background-image: src="../public/space.jpg";
+  
 }
 
+body {
+  background-image: url("./space.jpg");
+}
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ul {
+  flex-direction: column;
+  align-self: center;
+  align-content: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+li {
+  background: rgba(255, 255, 255, 0.653);
+  font-size: 14px;
+  list-style: none;
+  align-content: center;
+  margin-right: 20px;
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 3px;
+}
+
+.outerAstrologyList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+
+  text-align: center;
+ 
+  background: rgba(255, 255, 255, 0);
+  padding: 5px;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+  
+  text-align: center; 
+}
+
+label {
+  color: #61dafb;
+  margin: 15px;
+  align-self: center;
+  
+}
+
+input {
+  width: 200px;
+  align-content: center;
+  text-align: center;
+}
+
+.astrologyList {
+  background: rgba(255, 255, 255, 0.776);
+padding: 10px;
+border-radius: 10px;
+
+}
+
+h1 {
+
+  text-align: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.653);
+  padding: 30px;
+}
+.homeWelcome {
+  display: flex;
+  justify-content: center;
+  
+ 
 }
 
 .App-header {
