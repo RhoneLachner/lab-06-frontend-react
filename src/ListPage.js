@@ -23,11 +23,15 @@ export default class Listpage extends Component {
             {
               astrologyData.length > 0
               ? astrologyData.map((astrology) => 
-                 <div>   
+
+
+                 <div className='outerAstrologyList'>   
+                     <div  className='astrologyList'>
                     <h2>{astrology.sign}</h2>
                     <p>Ruling Planet: {astrology.ruling_planet}</p>
                     <p>Fixed Mode? {astrology.mode_fixed}</p>
                     <p>Chill Level: {astrology.chill_level}</p>
+                     </div>
                 </div>)
                     : 'loading'
               

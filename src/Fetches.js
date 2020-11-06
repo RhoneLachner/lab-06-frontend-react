@@ -18,7 +18,7 @@ export async function fetchAstrologyList(someId) {
 }
 
 //FETCHES ALL SIGN NAMES
-export async function fetchSigns() {
+export async function fetchSignNames() {
     try {
         const response = await request.get(`${URL}signs`);
 

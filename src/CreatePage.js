@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { fetchSigns, createAstrology} from './Fetches';
+import { fetchSigns, createAstrology, fetchAstrologyList} from './Fetches';
 import request from 'superagent';
 
 const userFromLocalStorage = {
@@ -17,7 +17,7 @@ state = {
 }
 
              componentDidMount = async () => {
-                const allSigns = await fetchSigns();
+                const allSigns = await fetchAstrologyList();
                 
                 this.setState({ allSigns });
             }
@@ -41,31 +41,35 @@ state = {
 
     render() {
         return (
-            <div>  
+            <div className='changePageDiv'>  
  
                  <form onSubmit={this.handleSubmit}>
                      <label>
-                         Ruling Planet                
-                     <input onChange={e => this.setState({ rulingPlanet: e.target.value})} type="string" />
+                                        
+                     <input placeholder='Enter Ruling Planet' onChange={e => this.setState({ rulingPlanet: e.target.value})} type="string" />
                      </label> 
                      <label>
-                        Mode Fixed?                
-                     <input onChange={e => this.setState({ mmodeFixed: e.target.value})} type="boolean" />
+                                     
+                     <input placeholder='Enter Mode Fixed True or False' onChange={e => this.setState({ mmodeFixed: e.target.value})} type="boolean" />
                      </label> 
                      <label>
-                         Chill Level                
-                     <input onChange={e => this.setState({ chillLevel: e.target.value})} type="number" />
+                                        
+                     <input placeholder='Select Chill Level Number ' onChange={e => this.setState({ chillLevel: e.target.value})} type="number" />
                      </label> 
 
 
                     <label>
-                      Sign Name 
-                     <select onChange={this.handleChange}>
-                        { 
-                          this.state.allSigns.map(sign => <option key={sign.id} value={sign.id}>
-                                {sign.name}
+                     
+                     <select  onChange={this.handleChange}>
+                     <option value=""> Enter Sign Name </option> 
+                        {/* { 
+                            
+                          this.state.signs.map(signs =>
+                         
+                        <option key={signs.sign} value={signs.name}>
+                                {signs.sign}
                           </option>)
-                          }
+                          } */}
                      </select>
                     </label>
 
