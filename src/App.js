@@ -1,13 +1,15 @@
+
 import React, { Component } from 'react'
 import './App.css';
+import ListPage from './ListPage.js';
+import CreatePage from './CreatePage.js';
+import DetailPage from './DetailPage.js';
 import {
     BrowserRouter as Router, 
     Route, 
     Switch,
 } from 'react-router-dom';
-import ListPage from './ListPage.js';
-import CreatePage from './CreatePage.js';
-import DetailPage from './DetailPage.js';
+
 
 export default class App extends Component {
     render() {
