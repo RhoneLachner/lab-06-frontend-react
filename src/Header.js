@@ -20,7 +20,7 @@ export default class Header extends Component {
                     
                 </li>
                 <li>
-                    <Link to="/fetch">Fetch Page</Link> 
+                    <Link to="/detail/:id">Detail/Update Page</Link> 
                 </li> 
             </ul>
             </span>
