@@ -29,7 +29,7 @@ export default class Listpage extends Component {
                      <div  className='astrologyList'>
                     <h2>{astrology.sign}</h2>
                     <p>Ruling Planet: {astrology.ruling_planet}</p>
-                    <p>Fixed Mode? {astrology.mode_fixed}</p>
+                    <p>Fixed Mode? {astrology.mode_fixed.toString()}</p>
                     <p>Chill Level: {astrology.chill_level}</p>
                      </div>
                 </div>)
