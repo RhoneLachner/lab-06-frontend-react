@@ -44,24 +44,21 @@ state = {
             <div className='changePageDiv'>  
  
                  <form onSubmit={this.handleSubmit}>
-                     <label>
-                                        
+                    <label>                        
+                         <input placeholder='Enter Sign Name ' onChange={e => this.setState({ chillLevel: e.target.value})} type="string" />
+                    </label> 
+                     
+                     <label>                    
                      <input placeholder='Enter Ruling Planet' onChange={e => this.setState({ rulingPlanet: e.target.value})} type="string" />
                      </label> 
-                     <label>
-                                     
-                     <input placeholder='Enter Mode Fixed True or False' onChange={e => this.setState({ mmodeFixed: e.target.value})} type="boolean" />
-                     </label> 
-                     <label>
-                                        
+                     
+                     <label>                                        
                      <input placeholder='Select Chill Level Number ' onChange={e => this.setState({ chillLevel: e.target.value})} type="number" />
                      </label> 
-
-
-                    <label>
-                     
+                    
+                     <label>                     
                      <select  onChange={this.handleChange}>
-                     <option value=""> Enter Sign Name </option> 
+                     <option value=""> Select Mode Fixed True or False </option> 
                         {/* { 
                             
                           this.state.signs.map(signs =>
