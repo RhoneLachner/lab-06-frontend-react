@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { fetchAstrology } from './Fetches.js';
+import { fetchAstrologyList } from './Fetches.js';
 
 export default class Listpage extends Component {
 
@@ -11,31 +11,32 @@ export default class Listpage extends Component {
 
     componentDidMount = async () => {
 
-        const astrology = await fetchAstrology()
-        this.setState({ astrology })
+        const astrologyData = await fetchAstrologyList()
+        this.setState({ astrologyData })
     }
 
 
     render() {
-       
+       const { astrologyData } = this.state
         return (
-            <div className='astrologyData'>
+            <div>
             {
-              this.state.loading
-              ? <div>Loading</div>
-              : this.state.astrologyData.map((astrology) => 
-              <div className='astrologyItem' key={astrology.id}>
-                    <h2>{astrology.sign_id}</h2>
+              astrologyData.length > 0
+              ? astrologyData.map((astrology) => 
+                 <div>   
+                    <h2>{astrology.sign}</h2>
                     <p>Ruling Planet: {astrology.ruling_planet}</p>
                     <p>Fixed Mode? {astrology.mode_fixed}</p>
                     <p>Chill Level: {astrology.chill_level}</p>
-              </div>
+                </div>)
+                    : 'loading'
               
-                )}              
+            }              
             </div>
 
 
         )
     }
 }
+
 

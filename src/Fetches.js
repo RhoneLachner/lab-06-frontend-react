@@ -1,14 +1,15 @@
 
 import request from 'superagent';
 
+
 const URL = `https://sheltered-reaches-14727.herokuapp.com/astrology`;
 
 
 
 //FETCHES SINGLE ASTROLOGY OBJECT
-export async function fetchAstrologyItem(someId) {
+export async function fetchAstrologyList(someId) {
     try {
-        const response = await request.get(`${URL}astrology/${someId}`);
+        const response = await request.get(`${URL}`);
 
         return response.body;
     } catch(err) {

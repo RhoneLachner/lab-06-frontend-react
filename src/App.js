@@ -1,9 +1,10 @@
 
 import React, { Component } from 'react'
-import './App.css';
+
 import ListPage from './ListPage.js';
 import CreatePage from './CreatePage.js';
 import DetailPage from './DetailPage.js';
+import './App.css';
 import {
     BrowserRouter as Router, 
     Route, 
@@ -11,9 +12,10 @@ import {
 } from 'react-router-dom';
 
 
-export default class App extends Component {
+export default class App extends React.Component {
     render() {
         return (
+
             <div>
                 <Router>
                     <Switch>
@@ -35,6 +37,7 @@ export default class App extends Component {
                     </Switch>
                 </Router>
             </div>
+
         )
     }
 }
