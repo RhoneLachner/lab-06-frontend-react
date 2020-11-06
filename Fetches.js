@@ -26,3 +26,16 @@ export async function fetchSigns() {
         throw err;
     }
 }
+
+//CREATE ASTROLOGY ITEM
+export async function createAstrology(newAstrology) {
+    try {
+        await request
+        .post(`${URL}astrology`)
+        .send(newAstrology);
+        
+        return;
+    } catch(err) {
+        throw err;
+    }
+}
