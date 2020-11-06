@@ -4,7 +4,7 @@
 }
 
 body {
-  background-image: url("./space.jpg");
+  background-image: url("./spaceportrait.jpeg");
 }
 
 .App-logo {
@@ -21,15 +21,40 @@ ul {
   flex-direction: row;
 }
 
+
+a:link {
+  color: rgb(149, 226, 250);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: rgb(149, 226, 250);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(0, 183, 255);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+ul {
+margin-top: 5%;
+}
+
 li {
-  background: rgba(255, 255, 255, 0.653);
+  background: rgba(255, 255, 255, 0.288);
   font-size: 14px;
   list-style: none;
   align-content: center;
   margin-right: 20px;
-  padding: 5px;
+  padding: 2px;
   font-size: 16px;
-  border-radius: 3px;
+  border-radius: 25px;
+  border-color: #ffffff;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.63);
 }
 
 .outerAstrologyList {
@@ -51,14 +76,32 @@ form {
   flex-direction: column;
   
   text-align: center; 
+
 }
 
 label {
   color: #61dafb;
   margin: 15px;
   align-self: center;
-  
+  border-color: #ffffff;
+  box-shadow: 0 0 5px #fafafa;
 }
+
+button {
+  margin: 15px;
+  border-color: #ffffff;
+  box-shadow: 0 0 10px #fafafa;
+}
+button:hover {
+  border-color: #ffffff;
+  box-shadow: 0 0 16px rgb(149, 226, 250);
+}
+button:active {
+  border-color: #ffffff;
+  box-shadow: 0 0 16px rgb(149, 226, 250);
+  background-color: rgb(149, 226, 250);
+}
+
 
 input {
   width: 200px;
@@ -67,9 +110,11 @@ input {
 }
 
 .astrologyList {
-  background: rgba(255, 255, 255, 0.776);
+  background: rgba(255, 255, 255, 0.925);
 padding: 10px;
-border-radius: 10px;
+border-radius: 0px;
+border-color: #ffffff;
+box-shadow: 0 0 10px #fafafa;
 
 }
 
@@ -77,15 +122,32 @@ h1 {
 
   text-align: center;
   align-items: center;
-  background: rgba(255, 255, 255, 0.653);
+  background: rgba(255, 255, 255, 0);
   padding: 30px;
 }
-.homeWelcome {
+.container {
   display: flex;
   justify-content: center;
-  
- 
+ margin-top: 12%;
+  color: #fff;
+  text-align: center; 
 }
+
+.glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+  
+  text-shadow:  0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0    40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  to {
+  
+  text-shadow:  0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+
 
 .App-header {
   background-color: #282c34;
