@@ -21,6 +21,15 @@ ul {
   flex-direction: row;
 }
 
+h3 {
+  color: #fff;
+  margin: 20px;
+  margin-top: 25px;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  text-align: center;
+}
 
 a:link {
   color: rgb(149, 226, 250);
@@ -83,14 +92,56 @@ label {
   color: #61dafb;
   margin: 15px;
   align-self: center;
+ 
+
+}
+
+.boolean-create-div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+  
+  text-align: center; 
+  align-content: center;
+  padding: 10px;
+
+}
+
+.list-div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+  
+  text-align: center; 
+  align-content: center;
+  padding: 10px;
+
+ 
+}
+
+select {
+  width: 230px;
   border-color: #ffffff;
-  box-shadow: 0 0 5px #fafafa;
+  box-shadow: 0 0 10px #fafafa;
+}
+input {
+  border-color: #ffffff;
+  box-shadow: 0 0 8px #fafafa;
 }
 
 button {
   margin: 15px;
   border-color: #ffffff;
   box-shadow: 0 0 10px #fafafa;
+  
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+  
+  text-align: center; 
 }
 button:hover {
   border-color: #ffffff;
@@ -101,7 +152,15 @@ button:active {
   box-shadow: 0 0 16px rgb(149, 226, 250);
   background-color: rgb(149, 226, 250);
 }
-
+.delete-div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+  
+  text-align: center; 
+  
+}
 
 input {
   width: 200px;
@@ -110,13 +169,17 @@ input {
 }
 
 .astrologyList {
-  background: rgba(255, 255, 255, 0.925);
+background: rgba(255, 255, 255, 0.925);
 padding: 10px;
 border-radius: 0px;
 border-color: #ffffff;
 box-shadow: 0 0 10px #fafafa;
-
+color: #282c34;
 }
+
+/* .astrologyList a:link, .astrologyList a:visited, .astrologyList a:hover  {
+  color: #282c34;
+} */
 
 h1 {
 
