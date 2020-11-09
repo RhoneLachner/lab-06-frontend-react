@@ -42,6 +42,7 @@ state = {
     render() {
         return (
             <div className='changePageDiv'>  
+            <h3>Create an astrology sign!</h3>
  
                  <form onSubmit={this.handleSubmit}>
                      <label>
