@@ -10,7 +10,7 @@ const userFromLocalStorage = {
 export default class CreatePage extends Component {
 
 state = {
-    signName: '',
+    signName: {},
     rulingPlanet: '',
     modeFixed: true,
     chillLevel: 0
@@ -28,7 +28,7 @@ state = {
 
      //BUILDS NEW ASTROLOGY ITEM USING FORM DATA FROM THE USER AND THEIR LOCAL STORAGE
                 await createAstrology({
-                        sign: this.state.signName,
+                        sign_id: this.state.signName,
                         ruling_planet: this.state.rulingPlanet,
                         mode_fixed: this.state.modeFixed,
                         chill_level: this.state.chillLevel,
@@ -44,31 +44,39 @@ state = {
             <div className='changePageDiv'>  
  
                  <form onSubmit={this.handleSubmit}>
-                    <label>                        
-                         <input placeholder='Enter Sign Name ' onChange={e => this.setState({ chillLevel: e.target.value})} type="string" />
+                     <label>
+                         <div className='list-div'>
+                          <select  onChange={e => this.setState({ signName: e.target.value})}>
+
+                                  <option value=""> Select Sign Name </option> 
+                                  <option value='1'>Taurus</option>
+                                  <option value='2'>Aquarius</option>
+                                  <option value='3'>Leo</option>
+                                  <option value='4'>Scorpio</option>
+                                  {console.log(this.state.signName)}
+                          </select>
+                          </div>
+                        <div className="boolean-create-div">
+                          <select  onChange={e => this.setState({ modeFixed: e.target.value})}>
+
+                                <option value=""> Select Fixed Mode True or False </option> 
+                                <option value='true'>True</option>
+                                <option value='false'>False</option>
+                                {console.log(this.handleChange)} 
+                        </select>
+                        </div>
+
+                    </label>         
+                        
+                    <label>                    
+                            <input placeholder='Enter Ruling Planet' onChange={e => this.setState({ rulingPlanet: e.target.value})} type="string" />
                     </label> 
-                     
-                     <label>                    
-                     <input placeholder='Enter Ruling Planet' onChange={e => this.setState({ rulingPlanet: e.target.value})} type="string" />
-                     </label> 
-                     
-                     <label>                                        
-                     <input placeholder='Select Chill Level Number ' onChange={e => this.setState({ chillLevel: e.target.value})} type="number" />
-                     </label> 
+                        
+                        <label>                                        
+                            <input placeholder='Select Chill Level Number ' onChange={e => this.setState({ chillLevel: e.target.value})} type="number" />
+                        </label> 
                     
-                     <label>                     
-                     <select  onChange={this.handleChange}>
-                     <option value=""> Select Mode Fixed True or False </option> 
-                        {/* { 
-                            
-                          this.state.signs.map(signs =>
-                         
-                        <option key={signs.sign} value={signs.name}>
-                                {signs.sign}
-                          </option>)
-                          } */}
-                     </select>
-                    </label>
+                   
 
                     <button>Submit</button>
                </form> 

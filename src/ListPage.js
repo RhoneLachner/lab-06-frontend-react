@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { fetchAstrologyList } from './Fetches.js';
-
+import { Link } from 'react-router-dom';
 export default class Listpage extends Component {
 
     state = {
@@ -24,7 +24,7 @@ export default class Listpage extends Component {
               astrologyData.length > 0
               ? astrologyData.map((astrology) => 
 
-
+        <Link to ={ `/detail/${astrology.id}` }>
                  <div className='outerAstrologyList'>   
                      <div  className='astrologyList'>
                     <h2>{astrology.sign}</h2>
@@ -32,7 +32,9 @@ export default class Listpage extends Component {
                     <p>Fixed Mode? {astrology.mode_fixed.toString()}</p>
                     <p>Chill Level: {astrology.chill_level}</p>
                      </div>
-                </div>)
+                </div>
+        </Link>
+                )
                     : 'loading'
               
             }              
